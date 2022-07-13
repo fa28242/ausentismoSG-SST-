@@ -239,69 +239,42 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        [
+       /*  [
             'text'        => 'pages',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
+        ], */
+        ['header' => 'Maestro ADMIN'],
         [
-            'text' => 'profile',
+            'text' => 'Usuarios',
             'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-user-cog',
+            'icon_color' => 'yellow',
         ],
         [
-            'text' => 'change_password',
+            'text' => 'Empleados',
             'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fas fa-users',
+            'icon_color' => 'cyan',
         ],
+        
+        ['header' => 'REGISTRO AUSENTISMO'],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
+            'text' => 'Ingreso Ausentismo',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-user-injured',
             'icon_color' => 'red',
-            'url'        => '#',
         ],
+        ['header' => 'INFORMES'],
         [
+            'text' => 'Generar Informe',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-file-medical',
+            'icon_color' => 'blue',
+        ],
+        /* [
             'text'       => 'warning',
             'icon_color' => 'yellow',
             'url'        => '#',
@@ -310,7 +283,7 @@ return [
             'text'       => 'information',
             'icon_color' => 'cyan',
             'url'        => '#',
-        ],
+        ], */
     ],
 
     /*
