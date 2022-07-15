@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -35,7 +36,13 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
-        });
+
+            //Rutas para el modulo administrativo
+            Route::middleware('web','auth')
+                ->prefix('administrador')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/administrador.php'));
+        }); 
     }
 
     /**

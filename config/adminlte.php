@@ -1,5 +1,13 @@
 <?php
 
+use JeroenNoten\LaravelAdminLte\Menu\Filters\DataFilter;
+use JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter;
+use JeroenNoten\LaravelAdminLte\Menu\Filters\HrefFilter;
+use JeroenNoten\LaravelAdminLte\Menu\Filters\LangFilter;
+use JeroenNoten\LaravelAdminLte\Menu\Filters\ActiveFilter;
+use JeroenNoten\LaravelAdminLte\Menu\Filters\SearchFilter;
+use JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter;
+
 return [
 
     /*
@@ -234,85 +242,65 @@ return [
 
         // Sidebar items:
         
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
+       
+        /* [
             'text'        => 'pages',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
-    ],
 
+        ], */
+        ['header' => 'MAESTRO ADMIN'],
+            [
+                'text'  => 'Usuarios',
+                'route' => 'administrador.users.index',
+                'icon'  => 'fas fa-user-circle',
+                'icon_color' => 'red',
+                'active' => ['administrador/users*']
+            ],
+            [
+                'text' => 'Empleados',
+                'url'  => 'admin/settings',
+                'icon' => 'fas fa-users-cog',
+                'icon_color' => 'blue',
+                'active' => ['administrador/empleados*']
+            ],
+            
+        ['header' => 'CONTROL Y REGISTRO'],
+            [
+                'text' => 'Registrar Ausentismo',
+                'url'  => 'admin/settings',
+                'icon' => 'fas fa-user-injured',
+                'icon_color' => 'yellow'
+            ],
+        ['header' => 'CONTROL DE REPORTES'],
+            [
+                'text' => 'Reporte por area de trabajo',
+                'url'  => 'admin/settings',
+                'icon' => 'fas fa-industry',
+                'icon_color' => 'purple'
+            ],
+            [
+                'text' => 'Reporte por tipo de Incapacidad',
+                'url'  => 'admin/settings',
+                'icon' => 'fas fa-medkit',
+                'icon_color' => 'green'
+            ],
+            [
+                'text' => 'Reporte de estado de cuenta EPS',
+                'url'  => 'admin/settings',
+                'icon' => 'fas fa-wallet',
+                'icon_color' => 'cyan'
+            ],
+            [
+                'text' => 'Reporte de ausentismo individual',
+                'url'  => 'admin/settings',
+                'icon' => 'fas fa-address-card',
+                'icon_color' => 'pink'
+            ],
+        
+    ],
     /*
     |--------------------------------------------------------------------------
     | Menu Filters
