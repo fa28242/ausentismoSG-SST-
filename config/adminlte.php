@@ -23,7 +23,7 @@ return [
     */
 
     'title' => '',
-    'title_prefix' => 'Ausentismo SG-SST |',
+    'title_prefix' => 'AU SG-SST |',
     'title_postfix' => '',
 
     /*
@@ -257,7 +257,8 @@ return [
                 'route' => 'administrador.users.index',
                 'icon'  => 'fas fa-user-circle',
                 'icon_color' => 'red',
-                'active' => ['administrador/users*']
+                'active' => ['administrador/users*'],
+                'can'   => 'administrador.users.index'
             ],
             [
                 'text' => 'Empleados',
@@ -265,6 +266,13 @@ return [
                 'icon' => 'fas fa-users-cog',
                 'icon_color' => 'blue',
                 'active' => ['administrador/empleados*']
+            ],
+            [
+                'text' => 'Roles',
+                'route' => 'administrador.roles.index',
+                'icon' => 'fas fa-sitemap',
+                'icon_color' => 'yellow',
+                'active' => ['administrador/roles*']
             ],
             
         ['header' => 'CONTROL Y REGISTRO'],

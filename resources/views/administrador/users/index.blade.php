@@ -4,10 +4,18 @@
 
 @section('content_header')
     @include('sweetalert::alert')
-    <h1>Gestion de Usuarios</h1>
-
-    <a href="{{ route('administrador.users.create') }}" class="btn btn-secondary btn-sm float-right" > <i class="fas fa-pencil-alt"> Crear Uuario </i></a>
-    <br>
+    
+    <div class="card">
+    
+        <div class="card-body">
+            
+            <h1>Gestion de Usuarios</h1>
+        
+            <a href="{{ route('administrador.users.create') }}" class="btn btn-success btn-sm float-right" > Crear Uuario <i class="fab fa-medrt fa-2x"> </i>  </a>
+           
+        </div>
+    </div>
+    
 @stop
 
 @section('content')

@@ -14,7 +14,14 @@ use App\Http\Requests\UserUpdateRequest;
 
 class UserController extends Controller
 {
-    
+    public function __construct()
+    {
+        $this->middleware('can:administrador.users.index');
+    }
+
+
+
+
     public function index()
     {
         $users = User::where('status', '1')->get();

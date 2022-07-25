@@ -18,8 +18,8 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Francisco Alvarez',
             'email' => 'fa@fa.com',
-            'status' => 'A',
+            'status' => '1',
             'password' => bcrypt('123'),
-        ]);
+        ])->assignRole('ADMINISTRADOR');
     }
 }
