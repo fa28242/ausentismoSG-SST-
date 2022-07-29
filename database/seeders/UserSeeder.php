@@ -20,6 +20,7 @@ class UserSeeder extends Seeder
             'email' => 'fa@fa.com',
             'status' => '1',
             'password' => bcrypt('123'),
+            'employee_id' => '1',
         ])->assignRole('ADMINISTRADOR');
     }
 }

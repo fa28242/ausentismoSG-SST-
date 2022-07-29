@@ -6,17 +6,22 @@ use Exception;
 use App\Models\User;
 use function Ramsey\Uuid\v1;
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
 use PhpParser\Node\Stmt\TryCatch;
+use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
+use App\Models\Employee;
 use App\Http\Requests\UserStoreRequest;
 use App\Http\Requests\UserUpdateRequest;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('can:administrador.users.index');
+        $this->middleware('can:administrador.users.index')->only('index');
+        $this->middleware('can:administrador.users.create')->only('create','store');
+        $this->middleware('can:administrador.users.edit')->only('edit','update');
+        $this->middleware('can:administrador.users.destroy')->only('destroy');
     }
 
 
@@ -32,19 +37,26 @@ class UserController extends Controller
    
     public function create()
     {
-        return view('administrador.users.create');
+        $employees = Employee::all();
+        $listaRoles = Role::pluck('name','id');
+        return view('administrador.users.create',compact('listaRoles','employees'));
     }
 
   
     public function store(UserStoreRequest $request)
     {
         try {
-            User::create([
-                'name' => $request->name,
+            $result = Employee::find($request->employee);
+
+            $user = User::create([
+                'name' => $result->name.' '.$result->lastname,
                 'email' => $request->email,
                 'status' => '1',
                 'password' => bcrypt($request->password),
+                'employee_id' => $request->employee
             ]);
+            $user->roles()->sync($request->roles);
+
             Alert::success('Guardado !', 'Usuario guardado correctamente');
             return redirect()->route('administrador.users.index');
         }catch (Exception $e) {
@@ -63,7 +75,9 @@ class UserController extends Controller
     
     public function edit(User $user)
     {
-        return view('administrador.users.edit',compact('user'));
+        $employee = Employee::find($user->employee_id);
+        $listaRoles = Role::pluck('name','id');
+        return view('administrador.users.edit',compact('user','listaRoles','employee'));
     }
 
  
@@ -79,11 +93,12 @@ class UserController extends Controller
             }
 
             $user -> update([
-                'name' => $request->name,
+                
                 'email' => $request->email,
                 'status' => $user->status,
                 'password' => $password
             ]);
+            $user->roles()->sync($request->roles);
             Alert::success('Actualizado !', 'Usuario actualizado correctamente');
             return redirect()->route('administrador.users.index');
         }catch (Exception $e) {

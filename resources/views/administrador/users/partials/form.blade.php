@@ -24,7 +24,19 @@
   
 <div  class="form-group">
     {!! Form::label('password', 'Clave') !!}
-    {!! Form::password('password', ['class' => 'form-control'. ($errors->has('password') ? ' is-invalid' : null), 'placeholder' => 'Ingrese password']) !!}
+    {!! Form::password('password', ['class' => 'form-control'. ($errors->has('password') ? ' is-invalid' : null), 'placeholder' => 'Ingrese password', 'style' =>'width:100%;']) !!}
+    @error('password')
+        <span class="invalid-feedback" role="alert">
+            <strong>* {{ $message }}</strong>
+        </span>
+    @enderror
+</div>
+
+<div  class="form-group">
+    {!! Form::label('roles', 'Elija un Rol') !!}
+    {!! Form::select('roles', $listaRoles,null,['class' => 'form-control', 'placeholder' => 'Elige un Rol']) !!}
+    
+    
     @error('password')
         <span class="invalid-feedback" role="alert">
             <strong>* {{ $message }}</strong>

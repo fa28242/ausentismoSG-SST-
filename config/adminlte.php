@@ -262,17 +262,19 @@ return [
             ],
             [
                 'text' => 'Empleados',
-                'url'  => 'admin/settings',
+                'route' => 'administrador.employees.index',
                 'icon' => 'fas fa-users-cog',
                 'icon_color' => 'blue',
-                'active' => ['administrador/empleados*']
+                'active' => ['administrador/employees*'],
+                'can'   => 'administrador.employees.index'
             ],
             [
                 'text' => 'Roles',
                 'route' => 'administrador.roles.index',
                 'icon' => 'fas fa-sitemap',
                 'icon_color' => 'yellow',
-                'active' => ['administrador/roles*']
+                'active' => ['administrador/roles*'],
+                'can'   => 'administrador.roles.index'
             ],
             
         ['header' => 'CONTROL Y REGISTRO'],
@@ -476,5 +478,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];
