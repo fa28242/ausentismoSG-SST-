@@ -274,7 +274,7 @@ return [
                 'icon' => 'fas fa-sitemap',
                 'icon_color' => 'yellow',
                 'active' => ['administrador/roles*'],
-                'can'   => 'administrador.roles.index'
+                //'can'   => 'administrador.roles.index'
             ],
             
         ['header' => 'CONTROL Y REGISTRO'],
