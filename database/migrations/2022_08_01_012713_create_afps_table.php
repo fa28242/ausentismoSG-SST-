@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('afps', function (Blueprint $table) {
             $table->id();
+            $table->string('code');
+            $table->string('afp_entity_name');
             $table->timestamps();
         });
     }

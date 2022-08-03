@@ -21,14 +21,24 @@ class RoleSeeder extends Seeder
         //PERMISOS PARA EL ROL ADMINISTRATIVO
         Permission::create(['name'  =>'administrador.users.index','description' => 'Ver usuarios'])->syncRoles([$admin]);
         Permission::create(['name'  =>'administrador.users.create','description' => 'Crear usuarios'])->syncRoles([$admin]);
-        Permission::create(['name'  =>'administrador.user.edit','description'=>'editar usuario'])->syncRoles([$admin]);
-        Permission::create(['name'  =>'administrador.user.destroy','description'=>'eliminar usuario'])->syncRoles([$admin]);
-
-        Permission::create(['name'  =>'administrador.employees.index','description'=>'mostrar empleado'])->syncRoles([$admin, $guest]);
-        Permission::create(['name'  =>'administrador.employees.create','description'=>'crear empleado'])->syncRoles([$admin, $guest]);
-        Permission::create(['name'  =>'administrador.employees.edit','description'=>'editar empleado'])->syncRoles([$admin, $guest]);
-        Permission::create(['name'  =>'administrador.employees.destroy','description'=>'eliminar empleado'])->syncRoles([$admin, $guest]);
+        Permission::create(['name'  =>'administrador.users.edit','description'=>'Editar usuario'])->syncRoles([$admin]);
+        Permission::create(['name'  =>'administrador.users.destroy','description'=>'Eliminar usuario'])->syncRoles([$admin]);
 
 
+        Permission::create(['name'  =>'administrador.roles.index','description' => 'Ver Rol'])->syncRoles([$admin]);
+        Permission::create(['name'  =>'administrador.roles.create','description' => 'Crear Rol'])->syncRoles([$admin]);
+        Permission::create(['name'  =>'administrador.roles.edit','description'=>'Editar Rol'])->syncRoles([$admin]);
+        Permission::create(['name'  =>'administrador.roles.destroy','description'=>'Eliminar Rol'])->syncRoles([$admin]);
+
+
+        Permission::create(['name'  =>'administrador.employees.index','description'=>'Ver Empleado'])->syncRoles([$admin, $guest]);
+        Permission::create(['name'  =>'administrador.employees.create','description'=>'Crear Empleado'])->syncRoles([$admin, $guest]);
+        Permission::create(['name'  =>'administrador.employees.edit','description'=>'Editar empleado'])->syncRoles([$admin, $guest]);
+        Permission::create(['name'  =>'administrador.employees.destroy','description'=>'Eliminar Empleado'])->syncRoles([$admin, $guest]);
+
+        Permission::create(['name'  =>'ausentismo.inabilities.index','description' => 'Ver Ausentismos'])->syncRoles([$admin]);
+        Permission::create(['name'  =>'ausentismo.inabilities.create','description' => 'Crear Ausentismo'])->syncRoles([$admin]);
+        Permission::create(['name'  =>'ausentismo.inabilities.edit','description'=>'Editar Ausentismo'])->syncRoles([$admin]);
+        Permission::create(['name'  =>'ausentismo.inabilities.destroy','description'=>'Eliminar Ausentismo'])->syncRoles([$admin]);
     }
 }

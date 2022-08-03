@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Arl extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'code',
+        'arl_entity_name',
+        
+    ];
 }

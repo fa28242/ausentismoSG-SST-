@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Afp extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'code',
+        'afp_entity_name',
+        
+    ];
 }

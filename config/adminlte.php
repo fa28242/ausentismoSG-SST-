@@ -280,9 +280,10 @@ return [
         ['header' => 'CONTROL Y REGISTRO'],
             [
                 'text' => 'Registrar Ausentismo',
-                'url'  => 'admin/settings',
+                'route' => 'ausentismo.inabilities.index',
                 'icon' => 'fas fa-user-injured',
-                'icon_color' => 'yellow'
+                'icon_color' => 'yellow',
+                'active' => ['ausentismo/inabilities*'],
             ],
         ['header' => 'CONTROL DE REPORTES'],
             [

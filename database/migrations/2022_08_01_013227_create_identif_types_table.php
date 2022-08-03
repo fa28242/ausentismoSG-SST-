@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('identif_types', function (Blueprint $table) {
             $table->id();
+            $table->string('clasification','5');
+            $table->string('description');
             $table->timestamps();
         });
     }

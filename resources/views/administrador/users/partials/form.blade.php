@@ -1,13 +1,16 @@
-
-<div  class="form-group">
-    {!! Form::label('name', 'Nombre') !!}
-    {!! Form::text('name', null,['class' => 'form-control'. ($errors->has('name') ? ' is-invalid' : null), 'placeholder' => 'Ingrese Nombre del usuario']) !!}
-    @error('name')
-        <span class="invalid-feedback" role="alert">
-            <strong>* {{ $message }}</strong>
-        </span>
-    @enderror
-</div>
+@if (!empty($employee))
+    {!! Form::label('employee', 'Empleado') !!}
+    {!! Form::text('employee', $employee->full_name , ['class' => 'form-control', 'readonly']) !!}
+@else
+    <div class="form-group">
+        {!! Form::label('employee', 'Eliga un empleado') !!}
+        <select name="employee" id="employee_id" class="form-control">
+            @foreach ($employees as $employee)
+                <option value="{{$employee->id}} ">{{$employee->full_name}}</option>
+            @endforeach
+        </select>
+    </div>
+@endif
 <div  class="form-group">
     {!! Form::label('email', 'Correo Electrónico') !!}
     {!! Form::text('email', null,['class' => 'form-control'. ($errors->has('email') ? ' is-invalid' : null), 'placeholder' => 'Ingrese Correo del usuario']) !!}

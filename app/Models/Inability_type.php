@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Inability_type extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'inability_type_name',
+        
+        
+        
+    ];
 }

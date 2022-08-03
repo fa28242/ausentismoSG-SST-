@@ -10,6 +10,9 @@ use App\Models\Employee;
 use RealRashid\SweetAlert\Facades\Alert;
 use Exception;
 use App\Http\Controllers\Controller;
+use App\Models\Afp;
+use App\Models\Arl;
+use App\Models\Eps;
 
 class EmployeeController extends Controller
 {
@@ -26,7 +29,10 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = Employee::where('status','1')->get();
-        return view('administrador.employees.index', compact('employees'));
+        $eps = Eps::find($employees->eps_id);
+        $arl = Arl::find($employees->arl_id);
+        $afp = Afp::find($employees->afp_id);
+        return view('administrador.employees.index', compact('employees','eps','arl','afp'));
     }
 
     
@@ -42,14 +48,14 @@ class EmployeeController extends Controller
         $employee = Employee::create([
             'name'              => $request->name,
             'lastname'          => $request->lastname,
-            'identif_type'      => $request ->identif_type,
+            'identif_type_id'   => $request ->identif_type_id,
             'identif_number'    => $request ->identif_number,
             'salary'            => $request ->salary,
             'position'          => $request ->position,
             'work_area'         => $request ->work_area,
-            'eps'               => $request ->eps,
-            'arl'               => $request ->arl,
-            'afp'               => $request ->afp,
+            'eps_id'            => $request ->eps_id,
+            'arl_id'            => $request ->arl_id,
+            'afp_id'            => $request ->afp_id,
             'status'            => '1',
             
         ]);

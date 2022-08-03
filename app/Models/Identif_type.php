@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Identif_type extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'clasification',
+        'description',
+        
+        
+    ];
 }

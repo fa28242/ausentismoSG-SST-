@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('eps', function (Blueprint $table) {
             $table->id();
+            $table->string('code');
+            $table->string('eps_entity_name');
+            $table->string('NIT');
+            $table->string('regimen');
             $table->timestamps();
         });
     }

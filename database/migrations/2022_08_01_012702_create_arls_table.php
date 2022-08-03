@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('arls', function (Blueprint $table) {
             $table->id();
+            $table->string('code');
+            $table->string('arl_entity_name');
             $table->timestamps();
         });
     }

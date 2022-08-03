@@ -26,14 +26,14 @@ class EmployeeStoreRequest extends FormRequest
         return [
             'name' => 'required',
             'lastname' => 'required',
-            'identif_type' => 'required',
+            'identif_type_id' => 'required',
             'identif_number' => 'required',
             'salary' => 'required',
             'position' => 'required',
             'work_area' => 'required',
-            'eps' => 'required',
-            'arl' => 'required',
-            'afp' => 'required',
+            'eps_id' => 'required',
+            'arl_id' => 'required',
+            'afp_id' => 'required',
         ];
     }
 

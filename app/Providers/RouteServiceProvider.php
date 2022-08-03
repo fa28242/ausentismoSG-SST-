@@ -42,6 +42,14 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('administrador')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/administrador.php'));
+           
+            //Rutas para el modulo de Ausentismo
+            Route::middleware('web','auth')
+                ->prefix('ausentismo')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/ausentismo.php'));
+
+            
         }); 
     }
 

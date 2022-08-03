@@ -27,8 +27,8 @@
     <div class="row">
         <div class="col-12 col-sm-3">
                 <div  class="form-group">
-                    {!! Form::label('identif_type', 'Tipo de Idenficación') !!}
-                    {!! Form::text('identif_type', null,['class' => 'form-control'. ($errors->has('identif_type') ? ' is-invalid' : null), 'placeholder' => 'Tipo de identificación']) !!}
+                    {!! Form::label('identif_type_id', 'Tipo de Idenficación') !!}
+                    {!! Form::text('identif_type_id', null,['class' => 'form-control'. ($errors->has('identif_type_id') ? ' is-invalid' : null), 'placeholder' => 'Tipo de identificación']) !!}
                     @error('identif_type')
                         <span class="invalid-feedback" role="alert">
                             <strong>* {{ $message }}</strong>
@@ -98,8 +98,8 @@
       <div class="row">
         <div class="col-12 col-sm-4">
             <div  class="form-group">
-                {!! Form::label('eps', 'EPS') !!}
-                {!! Form::text('eps', null,['class' => 'form-control'. ($errors->has('eps') ? ' is-invalid' : null), 'placeholder' => 'Ingrese Area de Trabajo del Empleado']) !!}
+                {!! Form::label('eps_id', 'EPS') !!}
+                {!! Form::text('eps_id', null,['class' => 'form-control'. ($errors->has('eps_id') ? ' is-invalid' : null), 'placeholder' => 'Ingrese Area de Trabajo del Empleado']) !!}
                 @error('eps')
                     <span class="invalid-feedback" role="alert">
                         <strong>* {{ $message }}</strong>
@@ -109,8 +109,8 @@
         </div>
         <div class="col-12 col-sm-4">
             <div  class="form-group">
-                {!! Form::label('arl', 'ARL') !!}
-                {!! Form::text('arl', null,['class' => 'form-control'. ($errors->has('arl') ? ' is-invalid' : null), 'placeholder' => 'Ingrese Area de Trabajo del Empleado']) !!}
+                {!! Form::label('arl_id', 'ARL') !!}
+                {!! Form::text('arl_id', null,['class' => 'form-control'. ($errors->has('arl') ? ' is-invalid' : null), 'placeholder' => 'Ingrese Area de Trabajo del Empleado']) !!}
                 @error('arl')
                     <span class="invalid-feedback" role="alert">
                         <strong>* {{ $message }}</strong>
@@ -120,8 +120,8 @@
         </div>
         <div class="col-12 col-sm-4">
             <div  class="form-group">
-                {!! Form::label('afp', 'AFP') !!}
-                {!! Form::text('afp', null,['class' => 'form-control'. ($errors->has('afp') ? ' is-invalid' : null), 'placeholder' => 'Ingrese Area de Trabajo del Empleado']) !!}
+                {!! Form::label('afp_id', 'AFP') !!}
+                {!! Form::text('afp_id', null,['class' => 'form-control'. ($errors->has('afp') ? ' is-invalid' : null), 'placeholder' => 'Ingrese Area de Trabajo del Empleado']) !!}
                 @error('afp')
                     <span class="invalid-feedback" role="alert">
                         <strong>* {{ $message }}</strong>
