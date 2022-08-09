@@ -15,4 +15,8 @@ class Inability_type extends Model
         
         
     ];
+    public function employees()
+    {
+        return $this->belongsTo(Employee::class);
+    }
 }

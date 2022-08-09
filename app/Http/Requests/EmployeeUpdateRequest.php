@@ -26,6 +26,7 @@ class EmployeeUpdateRequest extends FormRequest
         return [
             'name' => 'required',
             'lastname' => 'required',
+            'identif_type_id' => 'required',
             'identif_number' => 'required',
             'salary' => 'required',
             'position' => 'required',
@@ -42,13 +43,14 @@ class EmployeeUpdateRequest extends FormRequest
         [
             'name.required' => 'Debe ingresar los nombres completos',
             'lastname.required' => 'Debe ingresar los apellidos completos',
-            'identification.required' => 'Debe ingresar un número de identificación',
+            'identif_type_id.required' => 'Debe ingresar un número de identificación',
+            'identif_number.required' => 'Debe ingresar un número de identificación',
             'salary.required' => 'Debe ingresar el salario',
             'position.required' => 'Debe ingresar el cargo',
             'work_area.required' => 'Debe ingresar el área de trabajo',
-            'eps.required' => 'Debe ingresar la Eps',
-            'arl.required' => 'Debe ingresar la Arl',
-            'afp.required' => 'Debe ingresar la Afp',
+            'eps_id.required' => 'Debe ingresar la Eps',
+            'arl_id.required' => 'Debe ingresar la Arl',
+            'afp_id.required' => 'Debe ingresar la Afp',
         ];
    } 
 }

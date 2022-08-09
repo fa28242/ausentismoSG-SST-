@@ -14,4 +14,9 @@ class Afp extends Model
         'afp_entity_name',
         
     ];
+
+    public function employee()
+    {
+        return $this->hasMany(Employee::class);
+    }
 }

@@ -23,12 +23,12 @@
                         <tr>
                             <td>{{$rol->id}}</td>
                             <td>{{$rol->name}}</td>
-                            <td width="10px"><a href="{{route('administrador.roles.edit',$rol)}}" class="btn btn-primary">Editar</a></td>
+                            <td width="10px"><a href="{{route('administrador.roles.edit',$rol)}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-edit"></i></a></td>
                             <td width="10px">
                                 <form action="{{route('administrador.roles.destroy',$rol)}}" method="POST">
                                     @csrf
                                     @method('delete')
-                                    <button class="btn btn-danger" type="submit">Eliminar</button>
+                                    <button class="btn btn-outline-danger btn-sm" type="submit"><i class="fas fa-trash"></i></button>
                                 </form>
                             </td>
 

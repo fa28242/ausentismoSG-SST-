@@ -14,4 +14,8 @@ class Arl extends Model
         'arl_entity_name',
         
     ];
+    public function employee()
+    {
+        return $this->hasMany(Employee::class);
+    }
 }

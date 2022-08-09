@@ -45,18 +45,22 @@
             </thead>
             <tbody>
                 @foreach ($employees as $employee)
-                
+                    
                     <tr>
                         <td> {{ $employee->full_name}} </td>
                         <td> {{ $employee->identif_number}} </td>
-                        {{-- <td> {{ $employee->identif_type_clasification}} </td> --}}
-                        <td> {{ number_format($employee->salary, 0)}} </td>
-                        <td> {{ number_format($employee->salary_per_day, 0)}} </td>
+                        <td> {{ $employee->salary}} </td>
+                        <td> {{ $employee->salary_per_day}} </td>
                         <td> {{ $employee->position}} </td>
                         <td> {{ $employee->work_area}} </td>
-                        <td> {{ $employee->eps}} </td>
-                        <td> {{ $employee->arl}} </td>
-                        <td> {{ $employee->afp}} </td>
+                        <td> {{ $employee->eps->eps_entity_name}} </td>
+                        <td> {{ $employee->arl->arl_entity_name}} </td>
+                        <td> {{ $employee->afp->afp_entity_name}} </td>
+                        
+                        
+                        {{-- //livewire clases del 25 y 26 de julio --}}
+
+                        
                      
                         {{-- <td> {{ $employee->status}} </td>  --}}
                         <td> <a href="{{ route('administrador.employees.edit',$employee) }}"  class="btn btn-outline-primary btn-sm">  <i class="fas fa-edit"></i></a> </td>
@@ -88,6 +92,7 @@
        $(document).ready(function () {
             $('#employeesTable').DataTable({
                 responsive:true,
+                autoWidth:false,
                 "language": {
                     "lengthMenu":"Mostrar  " + ` <select class="custom-select custom-select-sm form-control form-control-sm>
                                                     <option value="10">10</option>

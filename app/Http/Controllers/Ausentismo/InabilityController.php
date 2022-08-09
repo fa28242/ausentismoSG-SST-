@@ -27,7 +27,8 @@ class InabilityController extends Controller
     {
         $employees = Employee::all();
         $inability_type = Inability_type::pluck('inability_type_name','id');
-        return view('ausentismo.inabilities.index', compact('employees', 'inability_type'));
+        $inabilities = Inability::all();
+        return view('ausentismo.inabilities.index', compact('employees', 'inability_type','inabilities'));
     }
 
    

@@ -15,6 +15,7 @@ class Employee extends Model
         'identif_type_id',
         'identif_number',
         'salary',
+        'salary_per_day',
         'position',
         'work_area',
         'eps_id',
@@ -43,23 +44,22 @@ class Employee extends Model
         return $this->hasMany(User::class);
     }
 
-
     public function eps()
     {
-        return $this->hasOne(Eps::class);
+        return $this->belongsTo(Eps::class);
     }
 
-    public function arls()
+    public function arl()
     {
-        return $this->hasOne(Arl::class);
+        return $this->belongsTo(Arl::class);
     }
-    public function afps()
+    public function afp()
     {
-        return $this->hasOne(Afp::class);
+        return $this->belongsTo(Afp::class);
     }
-    public function identif_types()
+    public function identif_type()
     {
-        return $this->hasOne(Identif_type::class);
+        return $this->belongsTo(Identif_type::class);
     }
 
 }

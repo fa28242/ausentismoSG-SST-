@@ -50,7 +50,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($inabilities as $inaility)
+                @foreach ($inabilities as $inability)
                 
                     <tr>
                         <td> {{ $employee->full_name}}  </td>

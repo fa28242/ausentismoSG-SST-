@@ -21,4 +21,8 @@ class Inability extends Model
         'inability_entity_amount',
         
     ];
+    public function employees()
+    {
+        return $this->hasOne(Employee::class);
+    }
 }

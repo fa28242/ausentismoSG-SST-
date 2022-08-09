@@ -18,6 +18,10 @@ class Eps extends Model
     ];
     public function employee()
     {
-        return $this->hasOne(Employee::class);
+        return $this->hasMany(Employee::class);
     }
+    /* public function employees()
+    {
+        return $this->belongsTo(Employee::class);
+    } */
 }

@@ -80,6 +80,7 @@
        $(document).ready(function () {
             $('#usersTable').DataTable({
                 responsive:true,
+                autoWidth:false,
                 "language": {
                     "lengthMenu":"Mostrar  " + ` <select class="custom-select custom-select-sm form-control form-control-sm>
                                                     <option value="10">10</option>
